@@ -1,0 +1,96 @@
+/* 
+    Created on : Jul 1, 2016, 5:41:57 PM
+    Author     : alfianchandra
+*/
+body{
+    background: #fefefe;
+}
+*:focus {
+    outline: none;
+}
+.head{
+    height: 130px;
+    width: 100%;
+    display: table;
+    background: #2196F3;
+}
+.header{
+    /*background: red;*/
+    margin-top: 10px;
+}
+.logo{
+    /*height: 72px;*/
+}
+.logo img{
+    width: 200px;
+}
+btn-submit{
+}
+.btn-submit button{
+    margin-left: 20px;
+    margin-top: 34px;
+}
+.body-left, .body-right{
+    margin-top: 50px;
+}
+.body-left{
+    /*background: red;*/
+     
+}
+.body-right{
+    /*background: green;*/
+}
+.bordertitle{
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    padding: 10px 5px;
+    position: relative; 
+    height: auto;
+}
+.bordertitle .labeltitle{
+    position: absolute;
+    top: -11px;
+    background: #fefefe;
+    padding: 0 10px;
+}
+.fromadd{
+    margin-top: 30px;
+}
+.btn-custom:focus{border: none;outline:none;}
+.btn-custom{
+    padding: 10px 30px; 
+    background: #BBDEFB;
+    border: none;
+    outline:none;
+    font-weight: bold
+}
+footer{
+    margin-top: 20px;
+    clear: both;
+    height: 50px;
+    background: #1976D2;
+}
+.copyright{
+    margin-top: 10px;
+    color: #eee;
+    letter-spacing: 0.5px;
+}
+.list-group-item {
+    display: list-item;
+}
+@media(max-width:690px){
+    .province{
+        margin-bottom: 20px !important;
+    }
+}
+@media(max-width:550px){
+     .province{
+        /*width: 100% !important;*/
+        margin-bottom: 20px !important;
+    }
+}
+#success{
+    text-align: left;
+    word-wrap: break-word;
+
+}

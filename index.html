@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title> QUIZ Technical Test : Front End Web Developer</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link href="assets/bootstrap-3.3.6-dist/css/bootstrap.css" type="text/css" rel="stylesheet"/>
+        <link href="assets/css/select2.css" type="text/css" rel="stylesheet"/>
+        
+        <link href="assets/css/style.css" type="text/css" rel="stylesheet"/>
+    </head>
+    <body ng-app="contact" ng-controller="contactCtrl">
+        <div class="container head">
+            <div class="col-lg-10 col-lg-offset-1 header">
+                <div class="col-lg-3 col-md-3 col-xs-12 col-sm-6 logo">
+                    <a href="#"><img src="assets/img/logo.png" alt="your logo" class="img-responsive"/></a>
+                </div>
+                <div class="col-lg-4 col-lg-offset-5 col-md-offset-5 col-md-4 col-sm-5 col-sm-offset-1 hidden-xs btn-submit">
+                    <button class="btn btn-success" name="compsubmit" ng-click="submitComp()" ng-disabled="CompProfil.$invalid" data-toggle="modal" data-target=".modalcomp">
+                        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                        Submit
+                    </button>
+                    <button class="btn btn-danger " type="reset" ng-click="resetComp()">
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        Cancel
+                    </button>                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="col-lg-10 col-lg-offset-1">
+                <div class="col-lg-6">
+                    <div class="body-left">
+                        
+                        <!--PEMBERITAHUAN-->
+                        <div class="alert alert-success fadein" id="success" ng-show='one'>
+                          <strong>Success!</strong>
+                          Data telah terkirim ke server menggunakan method POST dan angularJS 
+                          {{terkirim}}.
+                        </div>
+                        
+                        <div class="alert alert-danger aldeng" id="error" ng-show='Two'>
+                          <strong>Danger!</strong> Data Gagal Terkirim.
+                        </div>
+                        <!--======================-->
+
+                        <form name="CompProfil" ng-submit="submitComp()" data-toggle="validator" role="form">
+                            <div class="form-group has-feedback">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Name" ng-model="contactText.name" required data-error="Name Tidak Boleh Kosong!!">
+                                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group has-feedback">
+                                <label for="Description">Description</label>
+                                <textarea required id="Description" placeholder="Description" class="form-control" rows="5" ng-model="contactText.desc" data-error="Description Tidak Boleh Kosong!!"></textarea>
+                                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                <div class="help-block with-errors"></div>
+                            </div>  
+
+                            <div class="form-group bordertitle">
+                                <label class="labeltitle">Address</label>
+                                <div class="form-group fromadd has-feedback">
+                                    <label for="Street">Street</label>
+                                    <input type="text" class="form-control" id="Street" placeholder="Street" ng-model="contactText.street" data-error="Street Tidak Boleh Kosong!!" required>
+                                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="form-group has-feedback">
+                                    <label for="City">City</label>
+                                    <input type="text" class="form-control" id="City" placeholder="City" ng-model="contactText.city" data-error="City Tidak Boleh Kosong!!" required>
+                                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                    <div class="help-block with-errors"></div>                                
+                                </div>  
+                                <div class="form-horizontal">
+                                    <div class="form-group">
+                                        <label for="province" class="col-lg-6 hidden-xs col-sm-6">Province</label>
+                                        <label for="PosCode" class="col-lg-6 hidden-xs col-sm-6">Postal Code</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6 province">
+                                            <select class="form-control" id="province" style="width: 100%" ng-model="contactText.prov" required data-error="Province Tidak Boleh Kosong!!">
+                                                <option value="">Province</option>
+                                                <option value="Aceh">Aceh</option>
+                                                <option value="Medan">Medan</option>
+                                                <option value="Padang">Padang</option>
+                                                <option value="Pekanbaru">Pekanbaru</option>
+                                                <option value="Jambi">Jambi</option>
+                                                <option value="Palembang">Palembang</option>
+                                                <option value="Lampung">Lampung</option>
+                                                <option value="Jakarta">DKI Jakarta</option>
+                                                <option value="Bandung">Bandung</option>
+                                                <option value="Serang">Serang</option>
+                                                <option value="Semarang">Semarang</option>
+                                                <option value="Yogyakarta">Yogyakarta</option>
+                                                <option value="Surabaya">Surabaya</option>
+                                                <option value="Bali">Bali</option>
+                                                <option value="Mataram">Mataram</option>
+                                                <option value="NTB">Nusa Tenggara Timur</option>
+                                            </select>
+                                            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                            <div class="help-block with-errors"></div>      
+                                        </div>
+                                        
+                                        
+                                        
+                                        <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
+                                            <input type="number" class="form-control" id="PosCode" placeholder="PosCode" ng-model="contactText.poscode" required="">
+                                            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                            <div class="help-block with-errors"></div>                                           
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="hidden-lg hidden-md hidden-sm col-xs-12">
+                                            <button class="btn btn-success" name="compsubmit" ng-disabled="CompProfil.$invalid" data-toggle="modal" data-target=".modalcomp">
+                                                <span class="glyphicon glyphicon-ok" aria-hidden="true" ></span>
+                                                Submit
+                                            </button>
+                                            <button class="btn btn-danger " type="reset">
+                                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                                Cancel
+                                            </button> 
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="body-right">
+
+                        <!--PEMBERITAHUAN-->
+                        <div class="alert alert-success fadein" id="success" ng-show='askSucces'>
+                            <strong>Success!</strong>
+                            Data telah terkirim ke server menggunakan method POST dan angularJS 
+                            {{askTerkirim}}.
+                        </div>
+
+                        <div class="alert alert-danger aldeng" id="error" ng-show='askFailed'>
+                            <strong>Danger!</strong> Data Gagal Terkirim.
+                        </div>
+                        <!--======================-->
+                        <div class="bordertitle">
+                            <label class="labeltitle">Ask Us</label>
+                            <form  name="ask" ng-submit="askSubmit()" data-toggle="validator" role="form">
+                                <div class="form-group fromadd">
+                                    <label for="devision">Devision</label>
+                                    <select class="form-control" id="devision" style="width: 100%" required ng-model="askText.devisi" data-error="Devisi Tidak Boleh Kosong!!">
+                                        <option value="">- Devision</option>
+                                        <option value="Technologi">Technologi (IT)</option>
+                                        <option value="Akuntansi">Akuntansi</option>
+                                        <option value="Pesonalia">Pesonalia</option>
+                                        <option value="Seles">Seles</option>
+                                        <option value="Marketing">Marketing</option>
+                                        <option value="R&D">R&D</option>
+                                        <option value="Admin">Admin</option>
+                                        <option value="Keuangan">Keuangan</option>
+                                        <option value="Produksi">Produksi</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                    <div class="help-block with-errors"></div>   
+                                </div>
+                                <div class="form-group has-feedback">
+                                    <label for="name2">Name</label>
+                                    <input type="text" class="form-control" id="name2" placeholder="Name" required ng-model="askText.namaask" data-error="Nama Tidak Boleh Kosong!!">
+                                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="form-group has-feedback">
+                                    <label for="Description">Description</label>
+                                    <textarea id="Description" placeholder="Description" class="form-control" rows="5" required ng-model="askText.descask"data-error="Description Tidak Boleh Kosong!!"></textarea>
+                                    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-custom" ng-disabled="ask.$invalid"  ng-submit="askSubmit()" data-toggle="modal" data-target=".modalAsk"> SEND &nbsp;
+                                    <span class="glyphicon glyphicon-send" aria-hidden="true"></span></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!--modal Company-->
+        <div class="modal fade modalcomp" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Success</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-success fadein" id="success" ng-show='one'>
+                            <strong>Success!</strong>
+                            Data telah terkirim ke server menggunakan method POST dan angularJS 
+                            {{terkirim}}.
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!--modal ASK-->
+        <div class="modal fade modalAsk" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Success</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-success fadein" id="success" ng-show='askSucces'>
+                            <strong>Success!</strong>
+                            Data telah terkirim ke server menggunakan method POST dan angularJS 
+                            {{askTerkirim}}.
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <footer>
+            <div class="col-lg-12">
+                <div class="copyright">
+                    <div class="col-lg-12 text-center">
+                        &COPY; Alfian Chandra 2016 - <small style="color: #ccc">Technical Test : Front End Web Developer</small>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="assets/js/jquery-2.2.3.min.js" type="text/javascript"></script>
+        <script src="assets/js/angular.min.js" type="text/javascript"></script>
+        <script src="assets/js/select2/select2.js" type="text/javascript"></script>
+        <script src="assets/bootstrap-3.3.6-dist/js/bootstrap.js" type="text/javascript"></script>
+        <script src="assets/js/validator.min.js" type="text/javascript"></script>
+        <script src="assets/js/custom.js" type="text/javascript"></script>
+    </body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title> QUIZ Technical Test : Front End Web Developer</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link href="assets/bootstrap-3.3.6-dist/css/bootstrap.css" type="text/css" rel="stylesheet"/>
+        <link href="assets/css/select2.css" type="text/css" rel="stylesheet"/>
+        
+        <link href="assets/css/style.css" type="text/css" rel="stylesheet"/>
+    </head>
+    <body>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 form-group">
+                    <h3>Menggunaan Library :</h3>
+                    <ol class="list-group">
+                        <li class="list-group-item">
+                            <p>Bootstrap.</p>
+                        </li>
+                        <li class="list-group-item">
+                            <p>AngularJS.</p>
+                        </li>
+                        <li class="list-group-item">
+                            <p>Custom Css and JavaScript created with myself.</p>
+                        </li>
+                        <li class="list-group-item">
+                            <p>Validator Bootstrap.</p>
+                        </li>
+                        <li class="list-group-item">
+                            <p>Select2 for ComboBox.</p>
+                        </li>
+                    </ol>
+                </div>
+                
+                <div class="col-lg-4">
+                    <h3>Cara menggunakan <small>secara offline </small> :</h3>
+                    <ol class="list-group">
+                        <li class="list-group-item">
+                            <p>Buka applikasi XAMPP.</p>
+                        </li>
+                        <li class="list-group-item">
+                            <p>Taro file di htdocs.</p>
+                        </li>
+                        <li class="list-group-item">
+                            <p>Nyalakan Appace dari xampp.</p>
+                        </li>
+                        <li class="list-group-item">
+                            <p>Jalankan Html melalui localhost.</p>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-4">
+                    <h3>Catatan</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item">Kerana untuk menggunakan HTTP POST di butuh kan Server / PHP, Javascript dan html hanya untuk di sisi Client jika ingin memproses data di butuhkan server menggunakan Appache / PHP.</li>
+                        <li class="list-group-item">Untuk contoh saya sudah upload di hosting <a href="http://alfian.ceplasceplosnet.com/test_sociolla/" target="_blank">Klik Untuk mencoba</a> silahkan untuk di coba menggunakan HTTP POST dari angularJS tanpa Reload Page.</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h4>Jawaban dari 2 pertanyaan : </h4>
+                    <ol class="list-group">
+                        <li class="list-group-item">
+                            <b>How do you prevent the user from submitting the form 
+                                prematurely when the user hit enter?.</b>
+                            <ul>
+                                <li>Answers : <br>
+                                    <ul>
+                                        <li>
+                                            Untuk mencegah saya menggunakan Validator Bootstrap, 
+                                            jika field atau masih ada yang kosong maka validator bootstrap 
+                                            mencegah dengan cara button submit / enter disabled.                                        
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item">
+                            <b>How do you add validation and error messages to the form?</b>
+                            <ul>
+                                <li>Answers :
+                                    <ul>
+                                        <li>
+                                            Jika user tidak mengisi full atau masih ada 
+                                            field yang kosong maka field yang kosong akan 
+                                            berubah menjadi merah dan ada text di bawah field 
+                                            bahwa field tidak boleh kosong saya menggunakan bootstrap 
+                                            dan angularJS untuk mengecek form tersebut.
+                                        </li>
+                                        <li>
+                                            Jika file tidak bisa mengirimkan data maka AngularJS akan 
+                                            memberikan informasi tentang gagalnya pengiriman data dengan 
+                                            alert danger yang sudah di tersedia di bootstrap.
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+        </div>
+
+        
+
+        <footer>
+            <div class="col-lg-12">
+                <div class="copyright">
+                    <div class="col-lg-12 text-center">
+                        &COPY; Alfian Chandra 2016 - <small style="color: #ccc">Technical Test : Front End Web Developer</small>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="assets/js/jquery-2.2.3.min.js" type="text/javascript"></script>
+        <script src="assets/js/angular.min.js" type="text/javascript"></script>
+        <script src="assets/js/select2/select2.js" type="text/javascript"></script>
+        <script src="assets/bootstrap-3.3.6-dist/js/bootstrap.js" type="text/javascript"></script>
+        <script src="assets/js/validator.min.js" type="text/javascript"></script>
+        <script src="assets/js/custom.js" type="text/javascript"></script>
+    </body>
+</html>
